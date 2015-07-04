@@ -22,9 +22,8 @@ public class Player : MovingObject {
 		GameManager.instance.playerFoodPoints = food;
 	}
 	
-	void Update () {
-		if (!GameManager.instance.playerTurn)
-			return;
+	private void Update () {
+		if(!GameManager.instance.playersTurn) return;
 
 		int horizontal = 0;
 		int vertical = 0;
@@ -44,13 +43,13 @@ public class Player : MovingObject {
 	protected override void AttemptMove<T> (int xDir, int yDir) {
 		food--;
 
-		base.AttemptMove<T> (xDir, yDir);
+		base.AttemptMove<T>(xDir, yDir);
 
 		RaycastHit2D hit;
 
-		CheckIfGameOver ();
+		CheckIfGameOver();
 
-		GameManager.instance.playerTurn = false;
+		GameManager.instance.playersTurn = false;
 	}
 
 	private void OnTriggerEnter2d(Collider2D other) {
@@ -77,13 +76,13 @@ public class Player : MovingObject {
 	}
 
 	public void LoseFood (int loss) {
-		animator.SetTrigger ("playerHit");
+		animator.SetTrigger("playerHit");
 		food -= loss;
-		CheckIfGameOver ();
+		CheckIfGameOver();
 	}
 
 	private void CheckIfGameOver() {
 		if (food <= 0)
-			GameManager.instance.GameOver ();
+			GameManager.instance.GameOver();
 	}
 }

@@ -11,7 +11,7 @@ public class Enemy : MovingObject {
 	
 	protected override void Start () {
 		animator = GetComponent<Animator> ();
-		target = GameObject.FindGameObjectsWithTag ("Player").transform;
+		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		base.Start ();
 	}
 
