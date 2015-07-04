@@ -52,7 +52,7 @@ public class Player : MovingObject {
 		GameManager.instance.playersTurn = false;
 	}
 
-	private void OnTriggerEnter2d(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Exit") {
 			Invoke ("Restart", restartLevelDelay);
 			enabled = false;

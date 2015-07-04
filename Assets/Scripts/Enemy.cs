@@ -10,6 +10,7 @@ public class Enemy : MovingObject {
 	private bool skipMove;
 	
 	protected override void Start () {
+		GameManager.instance.AddEnemeyToList(this);
 		animator = GetComponent<Animator> ();
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
 		base.Start ();
@@ -40,6 +41,7 @@ public class Enemy : MovingObject {
 
 	protected override void OnCantMove <T> (T component) {
 		Player hitPlayer = component as Player;
+		animator.SetTrigger("enemyAttack");
 
 		hitPlayer.LoseFood (playerDamage);
 
