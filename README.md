@@ -6,7 +6,7 @@ It was built while following a intermediate level Unity tutorial called [Project
 
 Over the course of the video series you create procedural tile based levels, implement turn based movement, add a hunger system, audio and mobile touch controls.
 
-##Additions I've added:
+## Additions I've added:
 I've made a few additions to the project that where not part of the original tutorial.
 
 - **Setup Project To Work With Unity Remote** - [Unity Remote 4][4] allows you to easily test the game on a mobile device.
